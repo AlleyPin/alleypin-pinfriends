@@ -41,7 +41,7 @@ PinFriends 是 AlleyPin 的七隻品牌 IP 角色。這個 skill 讓 AI 生出�
 |---|---|
 | **Codex**（ChatGPT 桌面 App 的 Codex、Codex CLI、IDE 擴充） | 自己生成。先用 `view_image` 打開要附的參考圖（本 skill 資料夾的 `assets/ref/…`），讓圖進到對話裡，再用內建的圖片生成工具照下面的模板生成。不要再去呼叫 `codex exec`。 |
 | **Claude Code**，而且這台電腦裝了 Codex CLI 並已登入 | 照下面「用 Claude Code 叫 Codex」那一節，用 `codex exec` 附參考圖生成。 |
-| **Claude 網頁版／App**，或其他自己不能生圖的環境 | 照模板寫好完整的 prompt，列出要附的參考圖檔名，請使用者把這些圖連同 prompt 一起貼到 ChatGPT 或 Codex 生成。參考圖在安裝包的 `assets/ref/` 裡；你能直接提供檔案下載的話，就直接附上。 |
+| **Claude 網頁版、Claude App 的一般對話**，或其他自己不能生圖的環境 | **不適用。** 這裡生不出圖，請直接告訴使用者：改用 Codex（ChatGPT 桌面 App）或 Claude Code（Claude App 的 Code 分頁也算）。不要改寫 prompt 叫使用者自己去別的工具貼。 |
 
 ## 生圖流程
 

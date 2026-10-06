@@ -1,6 +1,6 @@
 # AlleyPin PinFriends 角色生圖 skill
 
-讓 Claude、Codex 照設計稿畫出不走樣的 PinFriends（山豆、吐司、瑞比、水可、伊吉、波提、石子）。內容包含七隻角色的外型規格、色票、高矮比例，以及從設計稿轉出來的參考圖。
+讓 Codex、Claude Code 照設計稿畫出不走樣的 PinFriends（山豆、吐司、瑞比、水可、伊吉、波提、石子）。內容包含七隻角色的外型規格、色票、高矮比例，以及從設計稿轉出來的參考圖。
 
 ## 下載安裝
 
@@ -8,7 +8,9 @@
 
 這個連結永遠指向最新版。下載後照 [安裝教學](安裝教學.md) 安裝。
 
-⚠️ **不要用綠色的「Code → Download ZIP」**：那樣下載的資料夾會叫 `alleypin-pinfriends-main`，跟 skill 名稱不一致，Claude 網頁版可能裝不起來。請用上面的連結。
+⚠️ **不要用綠色的「Code → Download ZIP」**：那樣下載的資料夾會叫 `alleypin-pinfriends-main`，跟 skill 名稱不一致。請用上面的連結。
+
+**Claude 網頁版、Claude App 的一般對話不適用**：它們自己不能生圖。（Claude App 的「Code」分頁就是 Claude Code，可以用。）
 
 ### 用 Claude Code 或 Codex？直接貼這句給它
 
