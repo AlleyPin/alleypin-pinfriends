@@ -3,6 +3,13 @@
 > 這個檔只給維護者看，**不會打包進給同事的安裝包**。每次實測的原始紀錄寫在這裡；從紀錄裡歸納出來、對所有人都有用的規則，要另外整理進 `SKILL.md` 的「生圖守則」。
 > 2026-10-06 從 SKILL.md 搬過來，內容未改。新紀錄請加在最上面。
 
+**2026-10-06 改公開＋發 Release v2026.10.06 後，驗三條同事下載路（未登入、從外部）**：
+- 路 1，README 固定連結 `releases/latest/download/alleypin-pinfriends.zip`：HTTP 200，下載檔與本機打包檔 SHA-256 相同，`verify_package.py` 8 項全過。
+- 路 2，綠色 Code → Download ZIP：資料夾是 `alleypin-pinfriends-main/`，與 skill 名稱不一致，改不了。README 頂端與 Release 說明都有警告，請大家用路 1。
+- 路 3，`git clone https://github.com/AlleyPin/alleypin-pinfriends.git`：資料夾是 `alleypin-pinfriends`，SKILL.md name 一致，17 張參考圖都在。
+- 教訓：上一版只驗了自己打的 zip，沒走 GitHub 下載這條路，被 Hsing 抓到。之後每次發版都要照 MAINTAINING.md 第 6 步驗三條路。
+- 還沒驗：Claude 網頁版實際上傳 zip。
+
 **2026-10-06 模擬全新安裝驗收（Codex 當收件人）**：用 `tools/release.sh` 打的安裝包（20 檔、4.7 MB），解壓到乾淨測試資料夾的 `.agents/skills/`；測試期間把 Hsing 電腦上 `~/.codex/skills/alleypin-pinfriends` 連結移出 skills 資料夾，確保 Codex 只看得到安裝包那份，跑完立刻放回。
 - 輸入同事會打的原句：「幫我生一張伊吉拿著手機、開心比讚的圖，透明背景，存成 ./yiji-thumbsup.png」，沒有任何提示。
 - Codex 自己載入安裝包裡的 SKILL.md 與 characters.md，照「你是 Codex」那條路：用 `view_image` 打開安裝包裡的 `yiji-turnaround.png`、`yiji-sheet.png`，再用內建 image_gen 生成；沒有去呼叫 `codex exec`。約 2 分鐘。
