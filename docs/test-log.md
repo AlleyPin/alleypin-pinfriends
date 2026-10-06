@@ -3,6 +3,8 @@
 > 這個檔只給維護者看，**不會打包進給同事的安裝包**。每次實測的原始紀錄寫在這裡；從紀錄裡歸納出來、對所有人都有用的規則，要另外整理進 `SKILL.md` 的「生圖守則」。
 > 2026-10-06 從 SKILL.md 搬過來，內容未改。新紀錄請加在最上面。
 
+**2026-10-06 第 2 版（Claude 網頁版改為不適用）＋Release v2026.10.06.2**：Hsing 指出網頁版自己不能生圖，原本「寫 prompt 叫同事去 ChatGPT 貼」那條路從沒測過，不該列成可用。改完重驗三條下載路：固定連結拿到的與本機打包檔 SHA-256 相同，8 項全過，安裝教學已是第 2 版；git clone 資料夾名稱正確、內容已更新；Download ZIP 仍是 `-main`（README 有警告）。
+
 **2026-10-06 改公開＋發 Release v2026.10.06 後，驗三條同事下載路（未登入、從外部）**：
 - 路 1，README 固定連結 `releases/latest/download/alleypin-pinfriends.zip`：HTTP 200，下載檔與本機打包檔 SHA-256 相同，`verify_package.py` 8 項全過。
 - 路 2，綠色 Code → Download ZIP：資料夾是 `alleypin-pinfriends-main/`，與 skill 名稱不一致，改不了。README 頂端與 Release 說明都有警告，請大家用路 1。
