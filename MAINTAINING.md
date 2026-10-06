@@ -1,6 +1,6 @@
 # 維護說明（維護者用，不進安裝包）
 
-維護者：Hsing。repo：`AlleyPin/alleypin-pinfriends`（私人）。
+維護者：Hsing。repo：`AlleyPin/alleypin-pinfriends`（**公開**，2026-10-06 起；連結只發給同事，搜尋引擎實測搜不到，但 GitHub 組織頁與站內搜尋看得到）。
 
 ## 檔案分工
 
@@ -13,6 +13,7 @@
 | `docs/test-log.md` | 每次實測的原始紀錄 | ❌ |
 | `tools/` | 重產參考圖、打包、檢查的腳本 | ❌ |
 | `MAINTAINING.md` | 本檔 | ❌ |
+| `README.md` | GitHub repo 首頁：下載連結與「不要用 Download ZIP」的提醒 | ❌ |
 
 ## 改了東西之後的發佈流程
 
@@ -21,7 +22,11 @@
    - 腳本會跑 `tools/verify_package.py` 的 8 項檢查，任何一項不過就刪掉壞包並 exit 1。
 3. 有改 `安裝教學.md` 的話，更新開頭的版本日期。
 4. commit（訊息寫這次防什麼坑）→ push。
-5. 把新的 zip 發給同事，或交給 Claude 管理員重新派發。
+5. 發 GitHub Release：到 https://github.com/AlleyPin/alleypin-pinfriends/releases/new ，tag 用 `v日期`（例如 `v2026.10.06`），附件上傳 `alleypin-pinfriends.zip`（**固定檔名，不要帶日期**），並勾 Set as the latest release。README 與安裝教學的 `releases/latest/download/alleypin-pinfriends.zip` 連結就會自動指到這一版。
+6. 驗收三條下載路（每次發版都要，不能只驗自己打的包）：
+   - Release 連結：`curl -L` 下載固定連結 → `python3 tools/verify_package.py` 要全過。
+   - `git clone`：clone 下來的資料夾名稱要是 `alleypin-pinfriends`，SKILL.md 的 name 一致。
+   - 綠色 Code → Download ZIP：資料夾一定會叫 `alleypin-pinfriends-main`，改不了；只能靠 README 頂端的提醒擋住，確認提醒還在。
 
 ## 檔數紅線
 
