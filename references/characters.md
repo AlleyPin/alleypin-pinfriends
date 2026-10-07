@@ -33,6 +33,25 @@
 Style: AlleyPin "PinFriends" mascot style. Flat 2D vector-like cartoon, clean near-black outlines (#171918), medium-thin and consistent line weight with rounded ends (only the tiny red ball Shizi uses a bolder line), flat solid color fills, no gradients, no textures, no 3D shading, no drop shadows. Chunky simple silhouettes, stubby limbs, mostly no neck. Tiny minimal facial features placed high on the face (dot or short-dash eyes) for a calm, deadpan, cute look. Expressions only through small flat marks: pink blush ovals, light-blue sweat drops, yellow sparkles, red "!!", question marks, music notes. Soft, muted palette overall; Yiji's black-and-white and Shizi's red are the bolder accents.
 ```
 
+### 另一套畫風：MG 介紹片（未充分實測）
+
+YouTube 上 1.Talk、AI Agent、Nova 的 MG 介紹片用的是另一套畫風：**沒有近黑色描邊**，角色靠填色分出形狀，白色角色和白袍只有細的淺灰藍線（約 #A9BFC4），眼睛、眉毛仍是深色短線。設計師的場景圖和本 skill 的參考圖都是上面那套黑描邊。**使用者沒有指定時，一律用上面那套。**
+
+使用者說要「跟介紹片一樣」「MG 風格」「不要黑框」時：
+1. 用下面的英文區塊**取代**上面那段 Style，不是接在後面。
+2. 四面圖照附，但要寫明「Use it for identity ONLY, not for line style」：四面圖本身是黑描邊，不講清楚容易被拉回去。另外附的設計稿姿勢圖也一樣，寫「do NOT copy its black line style」。
+3. 角色英文區塊裡寫到黑描邊的字要刪掉，例如吐司的「with a near-black outline」。吐司、水可、瑞比、石子的區塊都有這類字。
+4. 手邊有介紹片截圖的話，加附一張當畫風參考，寫「copy THIS line style and fill look」，並把下面第一句改成「match the AlleyPin MG explainer-video look shown in the MG style reference image exactly」。本 skill 沒有附 MG 原圖。
+
+```text
+Style (overrides any default mascot style): match the AlleyPin MG explainer-video look exactly. Soft flat 2D vector shapes WITHOUT near-black outlines: silhouettes are defined mainly by fill color; white characters and white clothing get only a thin light blue-gray outline (about #A9BFC4), never black. Flat fills (at most a very subtle soft gradient), no textures, no 3D shading, no drop shadows. Tiny minimal facial features placed high on the face (short dark dash eyes). Expressions only through small flat marks (light-blue sweat drops, white or yellow four-point sparkles, red "!!", question marks).
+```
+
+實測（2026-10-06，只測過山豆、吐司兩隻）：
+- 附介紹片截圖：山豆穿白袍站姿、吐司舉卡各兩版，4 張都沒有黑描邊，QA 必查三點也都過。
+- 只靠文字、不附截圖：吐司舉卡兩版也沒有黑描邊，但眼睛和眉毛畫成深藍灰（#385060 左右），不是介紹片的黑色（附截圖那組是 #202020）。
+- 其他五隻都還沒測。四面圖是黑描邊，多生幾張時要留意會不會飄回黑線。
+
 ### 情緒怎麼畫：不靠嘴，靠輔助元素
 
 原則（Hsing 2026-10-05）：山豆沒有嘴巴，其他角色的嘴也極小，所以**情緒靠眼睛、腮紅、周邊符號和肢體**營造，不靠嘴形。需求裡寫「大笑」「超開心」時，要翻譯成下表的手法，不要叫模型畫笑嘴。

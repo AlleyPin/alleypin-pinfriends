@@ -80,18 +80,20 @@ Constraints: match the reference sheets exactly in silhouette, proportions, colo
 - 前兩行（「不要讀檔案」「用內建工具生成並存檔」）是給「把 prompt 交給另一個 Codex」時用的。你自己就是 Codex 時，這兩行可以省略。有些人的 Codex 全域指令會要求先讀筆記或知識庫，明寫「不要讀檔案」可以讓它直接生圖。
 - 圖片要依序編號、寫明每張是哪隻角色、拿來做什麼（這是 Codex 內建 imagegen skill 的建議：reference images by index）。
 - 透明背景要明講「fully transparent background, only the subject」。2026-10-05 實測，Codex 生成的圖有保留透明背景。
-- 品牌 logo、文字不要讓模型畫，事後再用正式檔合成。
+- 品牌 logo、文字不要讓模型畫，事後再用正式檔合成（做法見生圖守則 8）。
+- 使用者要 YouTube MG 介紹片那種沒有黑描邊的畫風時，照 characters.md「另一套畫風：MG 介紹片」換掉 Style 區塊。這套只實測過山豆、吐司兩隻；沒指定就用預設的黑描邊。
 - 需求裡有情緒（開心、大笑、興奮）時，先照 characters.md「情緒怎麼畫」翻譯成腮紅、閃光、愛心、肢體動作，再加貼那段英文 Emotion 區塊。山豆沒有嘴巴，描述想要的表情時不能用「laughing」「big smile」這類字。英文區塊裡這些字只出現在否定句（never draw a smiling mouth），實測沒有把模型帶偏（只測過一次）。
 
 ## 生圖守則（從實測歸納）
 
 1. **參考圖要先自己驗過。** 模型會連參考圖裡的錯一起照抄。自己做版面參考圖時，每條線的頭尾都要落在形狀邊線上（或藏在前景形狀後面），角色身體被切掉的地方，前面要有一個形狀擋住；沒有東西擋，模型只能平切。
 2. **要精確的幾何背景，附一張用程式畫的幾何參考圖**，比只寫文字準：實測圓的邊緣偏差從 2.4px 降到 0.5px。prompt 裡再寫可檢查的定義，例如圓「寬高相等」、圓角矩形「圓角半徑＝寬度一半」。
-3. **多張圖要服裝一致**：把定稿圖當 Image 1 附上，寫明「ONLY for <角色>'s outfit, character look and line weight; do NOT copy its background」。實測五張都只抄了服裝，沒抄背景。
+3. **穿服裝、要指定姿勢時，每張參考圖只管一件事**：四面圖認臉；一張穿著該服裝的定稿圖只拿服裝，寫明「ONLY for <角色>'s outfit and line weight; do NOT copy its pose, props or background」；要用設計師現成的姿勢或表情，再附那張原圖，寫明「keep this exact pose and expression; only add the outfit」。實測兩批共 11 張都只抄了服裝：五張場景圖沒抄到背景，山豆白袍三種姿勢 6 張也沒抄到服裝參考圖裡的舉卡姿勢和卡片。
 4. **只換其中一隻角色或局部**：附原圖當 Image 1，寫明只換哪裡、其他全部保持不變。
 5. **同一份 prompt，每張的顏色會飄。** 實測同一份 prompt 生兩張，瑞比的領巾一張 #D7C467、一張 #F4D473（色票 #D9C960）。重要用途多生幾張，實際取色挑最接近色票的。
 6. **驗收時別誤判兩件事**：手臂、翅膀的內部線條兩端不接，是設計稿本來的畫法；山豆穿白袍時，胸口 M 記號被白袍遮住，也是設計稿本來就這樣。
 7. **一次只改一件事。** 重生時只改一個問題，並重申其他沒問題的部分要保留。
+8. **有字的物件（卡片、招牌、logo）先畫灰卡**：讓模型畫純灰 #808080、正面不傾斜的空白圓角卡，prompt 寫明「the card must be completely blank gray」，事後用程式換成正式圖。抓灰色要取「最大一塊相連的灰色區域」：黑描邊和白色身體交界的抗鋸齒剛好也是中灰，只用顏色門檻抓，範圍會撐到整隻角色（實測 750×829，卡片其實只有 239×148）。卡片要正面不傾斜，事後才能直接縮放貼上，不用算透視。
 
 ## 用 Claude Code 叫 Codex
 
