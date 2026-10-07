@@ -3,6 +3,12 @@
 > 這個檔只給維護者看，**不會打包進給同事的安裝包**。每次實測的原始紀錄寫在這裡；從紀錄裡歸納出來、對所有人都有用的規則，要另外整理進 `SKILL.md` 的「生圖守則」。
 > 2026-10-06 從 SKILL.md 搬過來，內容未改。新紀錄請加在最上面。
 
+**2026-10-07 第 3 版（守則 3、8 與 MG 畫風區塊）＋Release v2026.10.07**：commit `9984b31`。安裝包是 10/06 晚上打的（留檔版檔名 `_20261006`），push 前比對過包內的 SKILL.md、characters.md 與 repo 一致，沒有重打。三條下載路：
+- 固定連結 `releases/latest/download/alleypin-pinfriends.zip`：HTTP 200，下載檔與本機打包檔 SHA-256 相同（`af52fd5c…f479`），`verify_package.py` 8 項全過，SKILL.md 裡有守則 8。
+- `git clone`：資料夾是 `alleypin-pinfriends`，SKILL.md name 一致，守則 8 與 MG 區塊都在，17 張參考圖都在。
+- Download ZIP：README 頂端的警告還在。
+- 提醒：push 只會更新 repo 的檔案；README 最上面那顆「下載安裝包」按鈕指的是 Release 附件。只 push 不發 Release，點按鈕的同事會一直拿到舊版（Hsing 只給同事 repo 連結也一樣）。
+
 **2026-10-06 動畫試做 EP01（四）MG 畫風重測：換成正確的吐司參考圖，另加一組只靠文字**：接續下面（三）。以下路徑都在 `~/Desktop/AlleyPin/PinFriends/動畫試做/04_生圖/` 底下。兩組各生兩版、各約 3 分鐘；實際下的指令（含 `-i` 附了哪些檔）存在 `prompts/G1v3_G1v4_指令.txt`，這次之後都要存。
 - G1v3（正確參考圖）：prompt 跟 G1v2 只差輸出檔名，Image 2 換成 `ref/MG_吐司_畫風參考_v2.png`（團體照最左邊那隻吐司，380×413，只有上半身）。兩張都沒有黑描邊，近黑像素 823、651 個，都是眼睛和眉毛（#202020 左右）；單邊斜眉、黃嘴黃腳配橘描邊、空白灰卡正面不傾斜都對，透明背景有保留。下半身比四面圖略寬，MG 原圖的吐司也是上窄下寬。
 - G1v4（只靠文字，模擬同事手上沒有 MG 圖）：拿掉 MG 參考圖，只附四面圖和舉旗姿勢圖，Style 第一句改成「match the AlleyPin MG explainer-video look exactly」。兩張也都沒有黑描邊（近黑像素 0），QA 三點都過，下半身一樣略寬；差別是眼睛眉毛變成深藍灰（#385060～#445864），不是黑色。
